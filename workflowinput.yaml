@@ -1,6 +1,6 @@
-workflowname: template_nextflow_workflow
-workflowdescription: template_nextflow_workflow
-workflowlongdescription: This is a template nextflow workflow for GNPS2
+workflowname: msbuddy_workflow
+workflowdescription: msbuddy_workflow
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.1.2) deployment on GNPS2.
 workflowversion: "0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false

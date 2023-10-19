@@ -2,8 +2,18 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.8.8
-  - pandas
+  - python>=3.8
+  - pandas=1.2.4
+  - numpy
+  - numba>=0.57.0
+  - scipy
+  - joblib>=1.2.0
+  - scikit-learn>=1.3.0
+  - gdown
+  - tqdm
+  - pip
   - pip:
-    - xmltodict
+    - timeout-decorator
+    - brain-isotopic-distribution
+    - chemparse
     - requests
