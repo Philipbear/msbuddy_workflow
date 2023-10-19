@@ -2,14 +2,14 @@
 nextflow.enable.dsl=2
 
 // msbuddy params
-params.input = "README.md"
-params.details = 1
+params.input_file = ""
 params.ms_instr = "orbitrap"
-params.halogen = 1
+params.halogen = 0
 params.timeout_secs = 600
 params.ppm = 1
 params.ms1_tol = 5
 params.ms2_tol = 10
+params.batch_size = 1000
 params.top_n_candidate = 500
 params.c_min = 0
 params.c_max = 80
@@ -42,7 +42,6 @@ params.max_frag_reserved = 50
 params.use_all_frag = 0
 
 
-
 TOOL_FOLDER = "$baseDir/bin"
 
 process performMsbuddy {
@@ -51,20 +50,44 @@ process performMsbuddy {
     conda "$TOOL_FOLDER/conda_env.yml"
 
     input:
-    file input 
+    path input_file
 
     output:
-    file 'python_output.tsv'
+    path 'msbuddy_output/*'
 
     """
-    python $TOOL_FOLDER/python_script.py $input python_output.tsv
+    python $TOOL_FOLDER/main_nextflow.py -input $input_file \
+    -ms $params.ms_instr -hal $params.halogen \
+    -timeout_secs $params.timeout_secs \
+    -ppm $params.ppm -ms1_tol $params.ms1_tol -ms2_tol $params.ms2_tol \
+    -bs $params.batch_size \
+    -top_n_candidate $params.top_n_candidate \
+    -c_min $params.c_min -c_max $params.c_max \
+    -h_min $params.h_min -h_max $params.h_max \
+    -n_min $params.n_min -n_max $params.n_max \
+    -o_min $params.o_min -o_max $params.o_max \
+    -p_min $params.p_min -p_max $params.p_max \
+    -s_min $params.s_min -s_max $params.s_max \
+    -f_min $params.f_min -f_max $params.f_max \
+    -cl_min $params.cl_min -cl_max $params.cl_max \
+    -br_min $params.br_min -br_max $params.br_max \
+    -i_min $params.i_min -i_max $params.i_max \
+    -isotope_bin_mztol $params.isotope_bin_mztol \
+    -max_isotope_cnt $params.max_isotope_cnt \
+    -ms2_denoise $params.ms2_denoise \
+    -rel_int_denoise $params.rel_int_denoise \
+    -rel_int_denoise_cutoff $params.rel_int_denoise_cutoff \
+    -max_noise_frag_ratio $params.max_noise_frag_ratio \
+    -max_noise_rsd $params.max_noise_rsd \
+    -max_frag_reserved $params.max_frag_reserved \
+    -use_all_frag $params.use_all_frag
     """
 }
 
 workflow {
-    data = Channel.fromPath(params.input_mgf)
+    data = Channel.fromPath("$params.input_file")
     
     // Outputting Python
-    processDataPython(data)
+    performMsbuddy(data)
 
 }

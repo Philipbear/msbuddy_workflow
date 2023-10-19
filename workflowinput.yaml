@@ -1,6 +1,6 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
-workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.1.2) deployment on GNPS2.
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.2.2) deployment on GNPS2. The input file can be either a mgf or csv file.
 workflowversion: "0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
@@ -10,12 +10,28 @@ parameterlist:
     - displayname: File Selection
       paramtype: section
 
-    - displayname: Input Data Folder
+
+    - displayname: File Input (mgf or csv)
       paramtype: fileselector
-      nf_paramname: input_spectra_folder
-      formplaceholder: Enter the path to data
+      nf_paramname: input_file
+      formplaceholder: Enter the mgf or csv file path
       formvalue: ""
-      targettaskfolder: input_spectra
+      targettaskfolder: input_file
       optional: false
-      selectsinglefile: false
-      folderunroll: true
+      selectsinglefile: true
+
+    - displayname: Searching Parameters
+      paramtype: section
+
+    - displayname: MS Instrument Type
+      paramtype: select
+      nf_paramname: ms_instr
+      formvalue: "orbitrap"
+      options:
+        - value: "qtof"
+          display: "Q-TOF"
+        - value: "orbitrap"
+          display: "Orbitrap"
+        - value: "fticr"
+          display: "FT-ICR"
+
