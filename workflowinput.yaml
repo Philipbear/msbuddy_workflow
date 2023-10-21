@@ -11,7 +11,7 @@ parameterlist:
       paramtype: section
 
 
-    - displayname: File Input (mgf or csv)
+    - displayname: File input (MGF or CSV file)
       paramtype: fileselector
       nf_paramname: input_file
       formplaceholder: Enter the mgf or csv file path
@@ -20,10 +20,10 @@ parameterlist:
       optional: false
       selectsinglefile: true
 
-    - displayname: Searching Parameters
+    - displayname: Main Parameters
       paramtype: section
 
-    - displayname: MS Instrument Type
+    - displayname: MS instrument type
       paramtype: select
       nf_paramname: ms_instr
       formvalue: "orbitrap"
@@ -34,4 +34,245 @@ parameterlist:
           display: "Orbitrap"
         - value: "fticr"
           display: "FT-ICR"
+
+    - displayname: Halogen atoms
+      paramtype: select
+      nf_paramname: halogen
+      formvalue: "0"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+      tooltip: "whether to consider halogen atoms (F, Cl, Br, I) in the search"
+
+    - displayname: Mass tolerance in ppm
+      paramtype: select
+      nf_paramname: ppm
+      formvalue: "1"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+      tooltip: "Yes: ppm; No: Dalton"
+
+    - displayname: MS1 tolerance
+      paramtype: text
+      nf_paramname: ms1_tol
+      formplaceholder: Enter the ms1_tol
+      formvalue: "5"
+      tooltip: "MS1 tolerance in ppm or Da"
+
+    - displayname: MS2 tolerance
+      paramtype: text
+      nf_paramname: ms2_tol
+      formplaceholder: Enter the ms2_tol
+      formvalue: "10"
+      tooltip: "MS2 tolerance in ppm or Da"
+
+    - displayname: Other Parameters
+      paramtype: section
+
+    - displayname: C atom minimum
+      paramtype: text
+      nf_paramname: c_min
+      formplaceholder: Enter the c_min
+      formvalue: "0"
+
+    - displayname: C atom maximum
+      paramtype: text
+      nf_paramname: c_max
+      formplaceholder: Enter the c_max
+      formvalue: "80"
+
+    - displayname: H atom minimum
+      paramtype: text
+      nf_paramname: h_min
+      formplaceholder: Enter the h_min
+      formvalue: "0"
+
+    - displayname: H atom maximum
+      paramtype: text
+      nf_paramname: h_max
+      formplaceholder: Enter the h_max
+      formvalue: "150"
+
+    - displayname: N atom minimum
+      paramtype: text
+      nf_paramname: n_min
+      formplaceholder: Enter the n_min
+      formvalue: "0"
+
+    - displayname: N atom maximum
+      paramtype: text
+      nf_paramname: n_max
+      formplaceholder: Enter the n_max
+      formvalue: "20"
+
+    - displayname: O atom minimum
+      paramtype: text
+      nf_paramname: o_min
+      formplaceholder: Enter the o_min
+      formvalue: "0"
+
+    - displayname: O atom maximum
+      paramtype: text
+      nf_paramname: o_max
+      formplaceholder: Enter the o_max
+      formvalue: "30"
+
+    - displayname: P atom minimum
+      paramtype: text
+      nf_paramname: p_min
+      formplaceholder: Enter the p_min
+      formvalue: "0"
+
+    - displayname: P atom maximum
+      paramtype: text
+      nf_paramname: p_max
+      formplaceholder: Enter the p_max
+      formvalue: "10"
+
+    - displayname: S atom minimum
+      paramtype: text
+      nf_paramname: s_min
+      formplaceholder: Enter the s_min
+      formvalue: "0"
+
+    - displayname: S atom maximum
+      paramtype: text
+      nf_paramname: s_max
+      formplaceholder: Enter the s_max
+      formvalue: "15"
+
+    - displayname: F atom minimum
+      paramtype: text
+      nf_paramname: f_min
+      formplaceholder: Enter the f_min
+      formvalue: "0"
+
+    - displayname: F atom maximum
+      paramtype: text
+      nf_paramname: f_max
+      formplaceholder: Enter the f_max
+      formvalue: "20"
+
+    - displayname: Cl atom minimum
+      paramtype: text
+      nf_paramname: cl_min
+      formplaceholder: Enter the cl_min
+      formvalue: "0"
+
+    - displayname: Cl atom maximum
+      paramtype: text
+      nf_paramname: cl_max
+      formplaceholder: Enter the cl_max
+      formvalue: "15"
+
+    - displayname: Br atom minimum
+      paramtype: text
+      nf_paramname: br_min
+      formplaceholder: Enter the br_min
+      formvalue: "0"
+
+    - displayname: Br atom maximum
+      paramtype: text
+      nf_paramname: br_max
+      formplaceholder: Enter the br_max
+      formvalue: "10"
+
+    - displayname: I atom minimum
+      paramtype: text
+      nf_paramname: i_min
+      formplaceholder: Enter the i_min
+      formvalue: "0"
+
+    - displayname: I atom maximum
+      paramtype: text
+      nf_paramname: i_max
+      formplaceholder: Enter the i_max
+      formvalue: "10"
+
+    - displayname: MS1 isotope bin tolerance
+      paramtype: text
+      nf_paramname: isotope_bin_mztol
+      formplaceholder: Enter the isotope_bin_mztol
+      formvalue: "0.02"
+      tooltip: "MS1 isotope bin tolerance in Da"
+
+    - displayname: Max isotope count
+      paramtype: text
+      nf_paramname: max_isotope_cnt
+      formplaceholder: Enter the max_isotope_cnt
+      formvalue: "4"
+      tooltip: "Max isotope count to consider"
+
+    - displayname: MS2 denoise
+      paramtype: select
+      nf_paramname: ms2_denoise
+      formvalue: "1"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+
+    - displayname: Remove low intense MS2 peaks
+      paramtype: select
+      nf_paramname: rel_int_denoise
+      formvalue: "1"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+
+    - displayname: Relative intensity cutoff (MS2 denoise)
+      paramtype: text
+      nf_paramname: rel_int_denoise_cutoff
+      formplaceholder: Enter the rel_int_denoise_cutoff
+      formvalue: "0.01"
+
+    - displayname: Max noise fragment ratio (MS2 denoise)
+      paramtype: text
+      nf_paramname: max_noise_frag_ratio
+      formplaceholder: Enter the max_noise_frag_ratio
+      formvalue: "0.9"
+
+    - displayname: Max RSD of noise ion intensities (MS2 denoise)
+      paramtype: text
+      nf_paramname: max_noise_rsd
+      formplaceholder: Enter the max_noise_rsd
+      formvalue: "0.2"
+
+    - displayname: Max number of reserved fragments (MS2 denoise)
+      paramtype: text
+      nf_paramname: max_frag_reserved
+      formplaceholder: Enter the max_frag_reserved
+      formvalue: "50"
+
+    - displayname: Use all fragments
+      paramtype: select
+      nf_paramname: use_all_frag
+      formvalue: "0"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+
+    - displayname: Batch size
+      paramtype: text
+      nf_paramname: batch_size
+      formplaceholder: Enter the batch_size
+      formvalue: "5000"
+
+    - displayname: Timeout (seconds)
+      paramtype: text
+      nf_paramname: timeout_secs
+      formplaceholder: Enter the timeout_secs
+      formvalue: "600"
+      tooltip: "Timeout for a single query, in seconds"
+
 

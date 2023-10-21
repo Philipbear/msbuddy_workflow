@@ -9,8 +9,7 @@ params.timeout_secs = 600
 params.ppm = 1
 params.ms1_tol = 5
 params.ms2_tol = 10
-params.batch_size = 1000
-params.top_n_candidate = 500
+params.batch_size = 5000
 params.c_min = 0
 params.c_max = 80
 params.h_min = 0
@@ -61,7 +60,6 @@ process performMsbuddy {
     -timeout_secs $params.timeout_secs \
     -ppm $params.ppm -ms1_tol $params.ms1_tol -ms2_tol $params.ms2_tol \
     -bs $params.batch_size \
-    -top_n_candidate $params.top_n_candidate \
     -c_min $params.c_min -c_max $params.c_max \
     -h_min $params.h_min -h_max $params.h_max \
     -n_min $params.n_min -n_max $params.n_max \
