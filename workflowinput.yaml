@@ -34,6 +34,8 @@ parameterlist:
           display: "Orbitrap"
         - value: "fticr"
           display: "FT-ICR"
+        - value: "others"
+          display: "Others"
 
     - displayname: Halogen atoms
       paramtype: select
@@ -55,7 +57,7 @@ parameterlist:
           display: "Yes"
         - value: "0"
           display: "No"
-      tooltip: "Yes: ppm; No: Dalton"
+      tooltip: "Yes for ppm; No for Dalton"
 
     - displayname: MS1 tolerance
       paramtype: text
@@ -70,6 +72,23 @@ parameterlist:
       formplaceholder: Enter the ms2_tol
       formvalue: "10"
       tooltip: "MS2 tolerance in ppm or Da"
+
+    - displayname: Parallelization
+      paramtype: select
+      nf_paramname: parallel
+      formvalue: "1"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+
+    - displayname: CPU cores
+      paramtype: text
+      nf_paramname: n_cpu
+      formplaceholder: Enter the n_cpu
+      formvalue: "1"
+      tooltip: "Number of CPU cores to use"
 
     - displayname: Other Parameters
       paramtype: section

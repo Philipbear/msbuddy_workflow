@@ -39,6 +39,8 @@ params.max_noise_frag_ratio = 0.90
 params.max_noise_rsd = 0.20
 params.max_frag_reserved = 50
 params.use_all_frag = 0
+params.parallel = 0
+params.n_cpu = 1
 
 
 TOOL_FOLDER = "$baseDir/bin"
@@ -49,13 +51,13 @@ process performMsbuddy {
     conda "$TOOL_FOLDER/conda_env.yml"
 
     input:
-    path input_file
+    file input_file
 
     output:
     path 'msbuddy_output/*'
 
     """
-    python $TOOL_FOLDER/main_nextflow.py -input $input_file \
+    python $TOOL_FOLDER/msbuddy/main_nextflow.py -input $input_file \
     -ms $params.ms_instr -hal $params.halogen \
     -timeout_secs $params.timeout_secs \
     -ppm $params.ppm -ms1_tol $params.ms1_tol -ms2_tol $params.ms2_tol \
@@ -78,7 +80,9 @@ process performMsbuddy {
     -max_noise_frag_ratio $params.max_noise_frag_ratio \
     -max_noise_rsd $params.max_noise_rsd \
     -max_frag_reserved $params.max_frag_reserved \
-    -use_all_frag $params.use_all_frag
+    -use_all_frag $params.use_all_frag \
+    -parallel $params.parallel \
+    -n_cpu $params.n_cpu
     """
 }
 
