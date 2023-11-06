@@ -1,19 +1,31 @@
 name: template_nextflow_workflow
 displayname: STUFF
 Views:
--   name: Summary List
-    displayname: Summary List
+-   name: Formula Annotation Results
+    displayname: Formula Annotation Results
     viewname: summarylist
     displaytype: datatable
     parameters:
-        filename: output/summary.tsv
+        filename: nf_output/msbuddy_output/msbuddy_result_summary.tsv
+        error_missingfile: "No File"
         columns:
-            -   title: "View LCMS"
-                data: filename
-            -   title: "filename"
-                data: filename
-        columnDefs: '[ {"targets": 0,"data": null,"render": function ( data, type, row, meta ) {
-            return `
-            <a target="_blank" href="/dashboards/lcms?usi=mzspec:GNPS2-${task}:${encodeURIComponent(row["filename"])}">View LCMS - mzspec:GNPS2-${task}:${row["filename"]}</a>
-            `;}}]'
+            -   title: "Spectrum identifier"
+                data: identifier
+            -   title: "Precursor mz"
+                data: mz
+            -   title: "Adduct"
+                data: adduct
+            -   title: "Formula_rank_1"
+                data: formula_rank_1
+            -   title: "Est_FDR"
+                data: estimated_fdr
+            -   title: "Formula_rank_2"
+                data: formula_rank_2
+            -   title: "Formula_rank_3"
+                data: formula_rank_3
+            -   title: "Formula_rank_4"
+                data: formula_rank_4
+            -   title: "Formula_rank_5"
+                data: formula_rank_5
+
             

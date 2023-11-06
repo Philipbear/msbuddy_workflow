@@ -37,7 +37,7 @@ parameterlist:
         - value: "others"
           display: "Others"
 
-    - displayname: Halogen atoms
+    - displayname: Halogen atoms inclusion
       paramtype: select
       nf_paramname: halogen
       formvalue: "0"
