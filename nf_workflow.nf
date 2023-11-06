@@ -87,9 +87,9 @@ process performMsbuddy {
 }
 
 workflow {
-    data = Channel.fromPath("$params.input_file")
+    file_ch = Channel.fromPath("$params.input_file")
     
     // Outputting Python
-    performMsbuddy(data)
+    performMsbuddy(file_ch)
 
 }
