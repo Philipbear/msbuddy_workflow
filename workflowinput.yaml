@@ -26,7 +26,7 @@ parameterlist:
     - displayname: MS instrument type
       paramtype: select
       nf_paramname: ms_instr
-      formvalue: "orbitrap"
+      formvalue: "None"
       options:
         - value: "qtof"
           display: "Q-TOF"
@@ -34,8 +34,8 @@ parameterlist:
           display: "Orbitrap"
         - value: "fticr"
           display: "FT-ICR"
-        - value: "others"
-          display: "Others"
+        - value: "None"
+          display: "Others (customized mass tolerances will be used)"
 
     - displayname: Halogen atoms inclusion
       paramtype: select

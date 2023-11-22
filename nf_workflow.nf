@@ -3,7 +3,7 @@ nextflow.enable.dsl=2
 
 // msbuddy params
 params.input_file = "/Users/shipei/Documents/projects/msbuddy/demo/input_file.mgf"
-params.ms_instr = "orbitrap"
+params.ms_instr = "None"
 params.halogen = 0
 params.timeout_secs = 600
 params.ppm = 1
