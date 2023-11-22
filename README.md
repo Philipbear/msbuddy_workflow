@@ -2,7 +2,7 @@
 
 `msbuddy` is developed for molecular formula analysis in MS-based small molecule studies.
 
-This is a nextflow workflow for msbuddy (ver 0.2.4) deployment on GNPS2.
+This is a nextflow workflow for msbuddy (ver 0.2.5) deployment on GNPS2.
 
 [msbuddy GitHub repository](https://github.com/Philipbear/msbuddy)
 
