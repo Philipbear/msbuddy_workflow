@@ -1,6 +1,6 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
-workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.2.3) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.2.5) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
 workflowversion: "0.0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
@@ -227,59 +227,17 @@ parameterlist:
       formvalue: "4"
       tooltip: "Max isotope count to consider"
 
-    - displayname: MS2 denoise
-      paramtype: select
-      nf_paramname: ms2_denoise
-      formvalue: "1"
-      options:
-        - value: "1"
-          display: "Yes"
-        - value: "0"
-          display: "No"
-
-    - displayname: Remove low intense MS2 peaks
-      paramtype: select
-      nf_paramname: rel_int_denoise
-      formvalue: "1"
-      options:
-        - value: "1"
-          display: "Yes"
-        - value: "0"
-          display: "No"
-
     - displayname: Relative intensity cutoff (MS2 denoise)
       paramtype: text
       nf_paramname: rel_int_denoise_cutoff
       formplaceholder: Enter the rel_int_denoise_cutoff
       formvalue: "0.01"
 
-    - displayname: Max noise fragment ratio (MS2 denoise)
-      paramtype: text
-      nf_paramname: max_noise_frag_ratio
-      formplaceholder: Enter the max_noise_frag_ratio
-      formvalue: "0.9"
-
-    - displayname: Max RSD of noise ion intensities (MS2 denoise)
-      paramtype: text
-      nf_paramname: max_noise_rsd
-      formplaceholder: Enter the max_noise_rsd
-      formvalue: "0.2"
-
-    - displayname: Max number of reserved fragments (MS2 denoise)
+    - displayname: Max number of reserved fragments in MS2
       paramtype: text
       nf_paramname: max_frag_reserved
       formplaceholder: Enter the max_frag_reserved
       formvalue: "50"
-
-    - displayname: Use all fragments
-      paramtype: select
-      nf_paramname: use_all_frag
-      formvalue: "0"
-      options:
-        - value: "1"
-          display: "Yes"
-        - value: "0"
-          display: "No"
 
     - displayname: Batch size
       paramtype: text

@@ -32,13 +32,8 @@ params.i_min = 0
 params.i_max = 10
 params.isotope_bin_mztol = 0.02
 params.max_isotope_cnt = 4
-params.ms2_denoise = 1
-params.rel_int_denoise = 1
 params.rel_int_denoise_cutoff = 0.01
-params.max_noise_frag_ratio = 0.90
-params.max_noise_rsd = 0.20
 params.max_frag_reserved = 50
-params.use_all_frag = 0
 params.parallel = 0
 params.n_cpu = 1
 
@@ -74,13 +69,8 @@ process performMsbuddy {
     -i_min $params.i_min -i_max $params.i_max \
     -isotope_bin_mztol $params.isotope_bin_mztol \
     -max_isotope_cnt $params.max_isotope_cnt \
-    -ms2_denoise $params.ms2_denoise \
-    -rel_int_denoise $params.rel_int_denoise \
     -rel_int_denoise_cutoff $params.rel_int_denoise_cutoff \
-    -max_noise_frag_ratio $params.max_noise_frag_ratio \
-    -max_noise_rsd $params.max_noise_rsd \
     -max_frag_reserved $params.max_frag_reserved \
-    -use_all_frag $params.use_all_frag \
     -parallel $params.parallel \
     -n_cpu $params.n_cpu
     """
