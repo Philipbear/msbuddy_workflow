@@ -1,6 +1,6 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
-workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.2.5) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.1) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
 workflowversion: "0.0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
@@ -233,11 +233,11 @@ parameterlist:
       formplaceholder: Enter the rel_int_denoise_cutoff
       formvalue: "0.01"
 
-    - displayname: Max number of reserved fragments in MS2
+    - displayname: Top N peaks per 50 Da (MS2 denoise)
       paramtype: text
       nf_paramname: max_frag_reserved
       formplaceholder: Enter the max_frag_reserved
-      formvalue: "50"
+      formvalue: "6"
 
     - displayname: Batch size
       paramtype: text

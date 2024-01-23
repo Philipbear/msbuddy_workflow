@@ -33,7 +33,7 @@ params.i_max = 10
 params.isotope_bin_mztol = 0.02
 params.max_isotope_cnt = 4
 params.rel_int_denoise_cutoff = 0.01
-params.max_frag_reserved = 50
+params.top_n_per_50_da = 6
 params.parallel = 0
 params.n_cpu = 1
 
@@ -70,7 +70,7 @@ process performMsbuddy {
     -isotope_bin_mztol $params.isotope_bin_mztol \
     -max_isotope_cnt $params.max_isotope_cnt \
     -rel_int_denoise_cutoff $params.rel_int_denoise_cutoff \
-    -max_frag_reserved $params.max_frag_reserved \
+    -top_n_per_50_da $params.top_n_per_50_da \
     -parallel $params.parallel \
     -n_cpu $params.n_cpu
     """
