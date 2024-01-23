@@ -5,3 +5,7 @@ channels:
 dependencies:
   - nextflow
   - mamba
+  - pip
+  - pip:
+      - msbuddy
+      - lightgbm
