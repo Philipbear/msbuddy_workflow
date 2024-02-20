@@ -37,18 +37,7 @@ parameterlist:
         - value: "None"
           display: "Others (customized mass tolerances will be used)"
 
-    - displayname: Halogen atoms inclusion
-      paramtype: select
-      nf_paramname: halogen
-      formvalue: "0"
-      options:
-        - value: "1"
-          display: "Yes"
-        - value: "0"
-          display: "No"
-      tooltip: "whether to consider halogen atoms (F, Cl, Br, I) in the search"
-
-    - displayname: Mass tolerance in ppm
+    - displayname: Use ppm for mass tolerance
       paramtype: select
       nf_paramname: ppm
       formvalue: "1"
@@ -72,6 +61,17 @@ parameterlist:
       formplaceholder: Enter the ms2_tol
       formvalue: "10"
       tooltip: "MS2 tolerance in ppm or Da"
+
+    - displayname: Halogen atoms inclusion
+      paramtype: select
+      nf_paramname: halogen
+      formvalue: "0"
+      options:
+        - value: "1"
+          display: "Yes"
+        - value: "0"
+          display: "No"
+      tooltip: "whether to consider halogen atoms (F, Cl, Br, I) in the search"
 
     - displayname: Parallelization
       paramtype: select

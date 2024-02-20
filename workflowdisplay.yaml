@@ -13,7 +13,7 @@ Views:
                 data: identifier
             -   title: "Precursor mz"
                 data: mz
-            -   title: "Adduct"
+            -   title: "Precursor type"
                 data: adduct
             -   title: "Formula_rank_1"
                 data: formula_rank_1
