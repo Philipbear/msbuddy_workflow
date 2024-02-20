@@ -1,6 +1,6 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
-workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.1) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.6) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
 workflowversion: "0.0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
