@@ -1,6 +1,6 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
-workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.6) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.7) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
 workflowversion: "0.0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
@@ -37,30 +37,30 @@ parameterlist:
         - value: "None"
           display: "Others (customized mass tolerances will be used)"
 
-    - displayname: Use ppm for mass tolerance
-      paramtype: select
-      nf_paramname: ppm
-      formvalue: "1"
-      options:
-        - value: "1"
-          display: "Yes"
-        - value: "0"
-          display: "No"
-      tooltip: "Yes for ppm; No for Dalton"
+#    - displayname: Use ppm for mass tolerance
+#      paramtype: select
+#      nf_paramname: ppm
+#      formvalue: "1"
+#      options:
+#        - value: "1"
+#          display: "Yes"
+#        - value: "0"
+#          display: "No"
+#      tooltip: "Yes for ppm; No for Dalton"
 
-    - displayname: MS1 tolerance
+    - displayname: MS1 tolerance (ppm)
       paramtype: text
       nf_paramname: ms1_tol
       formplaceholder: Enter the ms1_tol
       formvalue: "5"
-      tooltip: "MS1 tolerance in ppm or Da"
+      tooltip: "MS1 tolerance in ppm"
 
-    - displayname: MS2 tolerance
+    - displayname: MS2 tolerance (ppm)
       paramtype: text
       nf_paramname: ms2_tol
       formplaceholder: Enter the ms2_tol
       formvalue: "10"
-      tooltip: "MS2 tolerance in ppm or Da"
+      tooltip: "MS2 tolerance in ppm"
 
     - displayname: Halogen atoms inclusion
       paramtype: select
@@ -72,23 +72,23 @@ parameterlist:
         - value: "0"
           display: "No"
       tooltip: "whether to consider halogen atoms (F, Cl, Br, I) in the search"
-
-    - displayname: Parallelization
-      paramtype: select
-      nf_paramname: parallel
-      formvalue: "1"
-      options:
-        - value: "1"
-          display: "Yes"
-        - value: "0"
-          display: "No"
-
-    - displayname: CPU cores
-      paramtype: text
-      nf_paramname: n_cpu
-      formplaceholder: Enter the n_cpu
-      formvalue: "1"
-      tooltip: "Number of CPU cores to use"
+#
+#    - displayname: Parallelization
+#      paramtype: select
+#      nf_paramname: parallel
+#      formvalue: "1"
+#      options:
+#        - value: "1"
+#          display: "Yes"
+#        - value: "0"
+#          display: "No"
+#
+#    - displayname: CPU cores
+#      paramtype: text
+#      nf_paramname: n_cpu
+#      formplaceholder: Enter the n_cpu
+#      formvalue: "1"
+#      tooltip: "Number of CPU cores to use"
 
     - displayname: Other Parameters
       paramtype: section
@@ -212,44 +212,44 @@ parameterlist:
       nf_paramname: i_max
       formplaceholder: Enter the i_max
       formvalue: "10"
-
-    - displayname: MS1 isotope bin tolerance
-      paramtype: text
-      nf_paramname: isotope_bin_mztol
-      formplaceholder: Enter the isotope_bin_mztol
-      formvalue: "0.02"
-      tooltip: "MS1 isotope bin tolerance in Da"
-
-    - displayname: Max isotope count
-      paramtype: text
-      nf_paramname: max_isotope_cnt
-      formplaceholder: Enter the max_isotope_cnt
-      formvalue: "4"
-      tooltip: "Max isotope count to consider"
-
-    - displayname: Relative intensity cutoff (MS2 denoise)
-      paramtype: text
-      nf_paramname: rel_int_denoise_cutoff
-      formplaceholder: Enter the rel_int_denoise_cutoff
-      formvalue: "0.01"
-
-    - displayname: Top N peaks per 50 Da (MS2 denoise)
-      paramtype: text
-      nf_paramname: max_frag_reserved
-      formplaceholder: Enter the max_frag_reserved
-      formvalue: "6"
-
-    - displayname: Batch size
-      paramtype: text
-      nf_paramname: batch_size
-      formplaceholder: Enter the batch_size
-      formvalue: "5000"
-
-    - displayname: Timeout (seconds)
-      paramtype: text
-      nf_paramname: timeout_secs
-      formplaceholder: Enter the timeout_secs
-      formvalue: "600"
-      tooltip: "Timeout for a single query, in seconds"
+#
+#    - displayname: MS1 isotope bin tolerance
+#      paramtype: text
+#      nf_paramname: isotope_bin_mztol
+#      formplaceholder: Enter the isotope_bin_mztol
+#      formvalue: "0.02"
+#      tooltip: "MS1 isotope bin tolerance in Da"
+#
+#    - displayname: Max isotope count
+#      paramtype: text
+#      nf_paramname: max_isotope_cnt
+#      formplaceholder: Enter the max_isotope_cnt
+#      formvalue: "4"
+#      tooltip: "Max isotope count to consider"
+#
+#    - displayname: Relative intensity cutoff (MS2 denoise)
+#      paramtype: text
+#      nf_paramname: rel_int_denoise_cutoff
+#      formplaceholder: Enter the rel_int_denoise_cutoff
+#      formvalue: "0.01"
+#
+#    - displayname: Top N peaks per 50 Da (MS2 denoise)
+#      paramtype: text
+#      nf_paramname: max_frag_reserved
+#      formplaceholder: Enter the max_frag_reserved
+#      formvalue: "6"
+#
+#    - displayname: Batch size
+#      paramtype: text
+#      nf_paramname: batch_size
+#      formplaceholder: Enter the batch_size
+#      formvalue: "5000"
+#
+#    - displayname: Timeout (seconds)
+#      paramtype: text
+#      nf_paramname: timeout_secs
+#      formplaceholder: Enter the timeout_secs
+#      formvalue: "600"
+#      tooltip: "Timeout for a single query, in seconds"
 
 

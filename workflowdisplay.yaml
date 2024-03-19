@@ -17,7 +17,7 @@ Views:
                 data: adduct
             -   title: "Formula_rank_1"
                 data: formula_rank_1
-            -   title: "Est_FDR"
+            -   title: "Estimated_FDR"
                 data: estimated_fdr
             -   title: "Formula_rank_2"
                 data: formula_rank_2
