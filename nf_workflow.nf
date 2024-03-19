@@ -26,12 +26,19 @@ process performMsbuddy {
     output:
     path 'msbuddy_output/*'
 
+    script:
+    // Determine file extension and adjust command line accordingly
+    def file_ext = input_file.getName().toLowerCase().endsWith('.mgf') ? '-mgf' : input_file.getName().toLowerCase().endsWith('.csv') ? '-csv' : ''
+    // Include '-hal' if params.halogen is 1
+    def halogen_option = halogen == 1 ? '-hal' : ''
+
+    def commandline_call = "${file_ext} ${input_file} -ms ${ms_instr} ${halogen_option} -ms1_tol ${ms1_tol} -ms2_tol ${ms2_tol} -d"
+
     """
-    python $TOOL_FOLDER/msbuddy/main_nextflow.py -input $input_file \
-    -ms $ms_instr -hal $halogen \
-    -ms1_tol $ms1_tol -ms2_tol $ms2_tol
+    msbuddy ${commandline_call}
     """
 }
+
 
 workflow {
     file_ch = Channel.fromPath(params.input_file, params.ms_instr, params.halogen, params.ms1_tol, params.ms2_tol)

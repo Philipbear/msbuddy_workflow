@@ -1,6 +1,6 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
-workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.7) deployment on GNPS2. See https://github.com/Philipbear/msbuddy_workflow for more details.
+workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.7) deployment on GNPS2. See https://github.com/Philipbear/msbuddy for more details.
 workflowversion: "0.0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
@@ -14,7 +14,7 @@ parameterlist:
     - displayname: File input (MGF or CSV file)
       paramtype: fileselector
       nf_paramname: input_file
-      formplaceholder: Enter the mgf or csv file path
+      formplaceholder: Enter the mgf or csv file path. For csv file, it should contain the USIs.
       formvalue: ""
       targettaskfolder: input_file
       optional: false
@@ -89,129 +89,129 @@ parameterlist:
 #      formplaceholder: Enter the n_cpu
 #      formvalue: "1"
 #      tooltip: "Number of CPU cores to use"
-
-    - displayname: Other Parameters
-      paramtype: section
-
-    - displayname: C atom minimum
-      paramtype: text
-      nf_paramname: c_min
-      formplaceholder: Enter the c_min
-      formvalue: "0"
-
-    - displayname: C atom maximum
-      paramtype: text
-      nf_paramname: c_max
-      formplaceholder: Enter the c_max
-      formvalue: "80"
-
-    - displayname: H atom minimum
-      paramtype: text
-      nf_paramname: h_min
-      formplaceholder: Enter the h_min
-      formvalue: "0"
-
-    - displayname: H atom maximum
-      paramtype: text
-      nf_paramname: h_max
-      formplaceholder: Enter the h_max
-      formvalue: "150"
-
-    - displayname: N atom minimum
-      paramtype: text
-      nf_paramname: n_min
-      formplaceholder: Enter the n_min
-      formvalue: "0"
-
-    - displayname: N atom maximum
-      paramtype: text
-      nf_paramname: n_max
-      formplaceholder: Enter the n_max
-      formvalue: "20"
-
-    - displayname: O atom minimum
-      paramtype: text
-      nf_paramname: o_min
-      formplaceholder: Enter the o_min
-      formvalue: "0"
-
-    - displayname: O atom maximum
-      paramtype: text
-      nf_paramname: o_max
-      formplaceholder: Enter the o_max
-      formvalue: "30"
-
-    - displayname: P atom minimum
-      paramtype: text
-      nf_paramname: p_min
-      formplaceholder: Enter the p_min
-      formvalue: "0"
-
-    - displayname: P atom maximum
-      paramtype: text
-      nf_paramname: p_max
-      formplaceholder: Enter the p_max
-      formvalue: "10"
-
-    - displayname: S atom minimum
-      paramtype: text
-      nf_paramname: s_min
-      formplaceholder: Enter the s_min
-      formvalue: "0"
-
-    - displayname: S atom maximum
-      paramtype: text
-      nf_paramname: s_max
-      formplaceholder: Enter the s_max
-      formvalue: "15"
-
-    - displayname: F atom minimum
-      paramtype: text
-      nf_paramname: f_min
-      formplaceholder: Enter the f_min
-      formvalue: "0"
-
-    - displayname: F atom maximum
-      paramtype: text
-      nf_paramname: f_max
-      formplaceholder: Enter the f_max
-      formvalue: "20"
-
-    - displayname: Cl atom minimum
-      paramtype: text
-      nf_paramname: cl_min
-      formplaceholder: Enter the cl_min
-      formvalue: "0"
-
-    - displayname: Cl atom maximum
-      paramtype: text
-      nf_paramname: cl_max
-      formplaceholder: Enter the cl_max
-      formvalue: "15"
-
-    - displayname: Br atom minimum
-      paramtype: text
-      nf_paramname: br_min
-      formplaceholder: Enter the br_min
-      formvalue: "0"
-
-    - displayname: Br atom maximum
-      paramtype: text
-      nf_paramname: br_max
-      formplaceholder: Enter the br_max
-      formvalue: "10"
-
-    - displayname: I atom minimum
-      paramtype: text
-      nf_paramname: i_min
-      formplaceholder: Enter the i_min
-      formvalue: "0"
-
-    - displayname: I atom maximum
-      paramtype: text
-      nf_paramname: i_max
-      formplaceholder: Enter the i_max
-      formvalue: "10"
+#
+#    - displayname: Other Parameters
+#      paramtype: section
+#
+#    - displayname: C atom minimum
+#      paramtype: text
+#      nf_paramname: c_min
+#      formplaceholder: Enter the c_min
+#      formvalue: "0"
+#
+#    - displayname: C atom maximum
+#      paramtype: text
+#      nf_paramname: c_max
+#      formplaceholder: Enter the c_max
+#      formvalue: "80"
+#
+#    - displayname: H atom minimum
+#      paramtype: text
+#      nf_paramname: h_min
+#      formplaceholder: Enter the h_min
+#      formvalue: "0"
+#
+#    - displayname: H atom maximum
+#      paramtype: text
+#      nf_paramname: h_max
+#      formplaceholder: Enter the h_max
+#      formvalue: "150"
+#
+#    - displayname: N atom minimum
+#      paramtype: text
+#      nf_paramname: n_min
+#      formplaceholder: Enter the n_min
+#      formvalue: "0"
+#
+#    - displayname: N atom maximum
+#      paramtype: text
+#      nf_paramname: n_max
+#      formplaceholder: Enter the n_max
+#      formvalue: "20"
+#
+#    - displayname: O atom minimum
+#      paramtype: text
+#      nf_paramname: o_min
+#      formplaceholder: Enter the o_min
+#      formvalue: "0"
+#
+#    - displayname: O atom maximum
+#      paramtype: text
+#      nf_paramname: o_max
+#      formplaceholder: Enter the o_max
+#      formvalue: "30"
+#
+#    - displayname: P atom minimum
+#      paramtype: text
+#      nf_paramname: p_min
+#      formplaceholder: Enter the p_min
+#      formvalue: "0"
+#
+#    - displayname: P atom maximum
+#      paramtype: text
+#      nf_paramname: p_max
+#      formplaceholder: Enter the p_max
+#      formvalue: "10"
+#
+#    - displayname: S atom minimum
+#      paramtype: text
+#      nf_paramname: s_min
+#      formplaceholder: Enter the s_min
+#      formvalue: "0"
+#
+#    - displayname: S atom maximum
+#      paramtype: text
+#      nf_paramname: s_max
+#      formplaceholder: Enter the s_max
+#      formvalue: "15"
+#
+#    - displayname: F atom minimum
+#      paramtype: text
+#      nf_paramname: f_min
+#      formplaceholder: Enter the f_min
+#      formvalue: "0"
+#
+#    - displayname: F atom maximum
+#      paramtype: text
+#      nf_paramname: f_max
+#      formplaceholder: Enter the f_max
+#      formvalue: "20"
+#
+#    - displayname: Cl atom minimum
+#      paramtype: text
+#      nf_paramname: cl_min
+#      formplaceholder: Enter the cl_min
+#      formvalue: "0"
+#
+#    - displayname: Cl atom maximum
+#      paramtype: text
+#      nf_paramname: cl_max
+#      formplaceholder: Enter the cl_max
+#      formvalue: "15"
+#
+#    - displayname: Br atom minimum
+#      paramtype: text
+#      nf_paramname: br_min
+#      formplaceholder: Enter the br_min
+#      formvalue: "0"
+#
+#    - displayname: Br atom maximum
+#      paramtype: text
+#      nf_paramname: br_max
+#      formplaceholder: Enter the br_max
+#      formvalue: "10"
+#
+#    - displayname: I atom minimum
+#      paramtype: text
+#      nf_paramname: i_min
+#      formplaceholder: Enter the i_min
+#      formvalue: "0"
+#
+#    - displayname: I atom maximum
+#      paramtype: text
+#      nf_paramname: i_max
+#      formplaceholder: Enter the i_max
+#      formvalue: "10"
 #
 #    - displayname: MS1 isotope bin tolerance
 #      paramtype: text
