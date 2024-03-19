@@ -41,7 +41,7 @@ process performMsbuddy {
 
 
 workflow {
-    file_ch = Channel.fromPath(params.input_file, params.ms_instr, params.halogen, params.ms1_tol, params.ms2_tol)
+    file_ch = Channel.fromPath(params.input_file)
 
-    performMsbuddy(file_ch)
+    performMsbuddy(file_ch, params.ms_instr, params.halogen, params.ms1_tol, params.ms2_tol)
 }
