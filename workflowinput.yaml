@@ -29,11 +29,11 @@ parameterlist:
       formvalue: "None"
       options:
         - value: "qtof"
-          display: "Q-TOF"
+          display: "Q-TOF (MS1: 10 ppm, MS2: 20 ppm)"
         - value: "orbitrap"
-          display: "Orbitrap"
+          display: "Orbitrap (MS1: 5 ppm, MS2: 10 ppm)"
         - value: "fticr"
-          display: "FT-ICR"
+          display: "FT-ICR (MS1: 2 ppm, MS2: 5 ppm)"
         - value: "None"
           display: "Others (customized mass tolerances will be used)"
 
