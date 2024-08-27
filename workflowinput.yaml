@@ -1,5 +1,5 @@
 workflowname: msbuddy_workflow
-workflowdescription: msbuddy_workflow
+workflowdescription: msbuddy for formula annotation (mgf or USI csv file)
 workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.7) deployment on GNPS2. See https://github.com/Philipbear/msbuddy for more details.
 workflowversion: "2024.08.27"
 workflowfile: nf_workflow.nf
