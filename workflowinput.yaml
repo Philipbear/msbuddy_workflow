@@ -1,20 +1,20 @@
 workflowname: msbuddy_workflow
 workflowdescription: msbuddy_workflow
 workflowlongdescription: This is a nextflow workflow for msbuddy (ver 0.3.7) deployment on GNPS2. See https://github.com/Philipbear/msbuddy for more details.
-workflowversion: "0.0.1"
+workflowversion: "2024.08.27"
 workflowfile: nf_workflow.nf
 workflowautohide: false
 adminonly: false
+
 #This maps the parameters from an input form to those that will appear in nextflow
 parameterlist:
     - displayname: File Selection
       paramtype: section
 
-
-    - displayname: File input (MGF or CSV file)
+    - displayname: File input (mgf or csv file)
       paramtype: fileselector
       nf_paramname: input_file
-      formplaceholder: Enter the mgf or csv file path. For csv file, it should contain the USIs.
+      formplaceholder: Enter the mgf or csv file path. For csv file, it should contain USI strings.
       formvalue: ""
       targettaskfolder: input_file
       optional: false

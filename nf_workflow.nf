@@ -17,7 +17,7 @@ process performMsbuddy {
     conda "$TOOL_FOLDER/conda_env.yml"
 
     input:
-    file input_file
+    path input_file
     val ms_instr
     val halogen
     val ms1_tol
@@ -41,7 +41,7 @@ process performMsbuddy {
 
 
 workflow {
-    file_ch = Channel.fromPath(params.input_file)
+//     file_ch = Channel.fromPath(params.input_file)
 
-    performMsbuddy(file_ch, params.ms_instr, params.halogen, params.ms1_tol, params.ms2_tol)
+    performMsbuddy(params.input_file, params.ms_instr, params.halogen, params.ms1_tol, params.ms2_tol)
 }
